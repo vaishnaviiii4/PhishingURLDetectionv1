@@ -20,7 +20,7 @@ function App() {
     setResult(null)
 
     try {
-      const response = await fetch('http://localhost:5001/predict', {
+      const response = await fetch('https://phishingurldetectionv1.onrender.com/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ function App() {
         setError(data.error || 'Failed to analyze URL')
       }
     } catch (err) {
-      setError('Failed to connect to server. Make sure the Flask backend is running.')
+      setError('Failed to connect to server. Please check your internet connection.')
     } finally {
       setLoading(false)
     }
